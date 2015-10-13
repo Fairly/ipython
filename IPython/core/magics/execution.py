@@ -738,6 +738,8 @@ python-profiler package from non-free.""")
                             # regular execution
                             try:
                                 run()
+                            except SystemExit:
+                                self.shell.showtraceback(exception_only=True)
                             except:
                                 self.shell.showtraceback(tb_offset=4)
 
