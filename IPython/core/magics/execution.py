@@ -739,7 +739,7 @@ python-profiler package from non-free.""")
                             try:
                                 run()
                             except:
-                                self.shell.showtraceback(exception_only=True)
+                                self.shell.showtraceback(tb_offset=4)
 
                 if 'i' in opts:
                     self.shell.user_ns['__name__'] = __name__save
@@ -890,7 +890,7 @@ python-profiler package from non-free.""")
                 try:
                     run()
                 except:
-                    self.shell.showtraceback(exception_only=True)
+                    self.shell.showtraceback(tb_offset=5)
             t1 = clock2()
             t_usr = t1[0] - t0[0]
             t_sys = t1[1] - t0[1]
